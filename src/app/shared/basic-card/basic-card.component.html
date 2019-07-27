@@ -1,0 +1,15 @@
+<mat-card>
+        <mat-card-title>{{config?.title}}</mat-card-title>
+        <mat-card-content class="content">{{config?.selftext}}</mat-card-content>
+        <div class="commnets d-flex justify-content-between align-items-center">
+            <div class="posted-by ft-13">
+                <span>Posted by {{config?.author}}</span>
+            </div>
+            <div class="d-flex align-items-center">
+            <span><i class="fa fa-share"></i>Share</span>
+            <button class="btn commnets" (click)="openComment(config?.permalink)"><i class="fa fa-comments"></i>
+                {{ redditService?.nFormatter(config?.num_comments) }}</button>
+                <button class="btn btn-primary"><i class="fa fa-plus mr-1"></i>Join</button>
+        </div>
+    </div>
+    </mat-card>

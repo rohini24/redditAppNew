@@ -1,0 +1,20 @@
+ 
+  .viewport {
+    height: 100vh;
+  }
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px #818285;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #f9f9f9;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #818285;
+}

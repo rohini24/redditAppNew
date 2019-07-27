@@ -1,0 +1,15 @@
+        <div class="row">
+        <div class="col-12 d-flex justiy-content-center" *ngIf="homePageDetails?.length === 0">
+            <div class="sorry-screen">
+                <p>Sorry! Something went wrong. Please try again.</p>
+            </div>
+            </div>
+            </div>
+            <cdk-virtual-scroll-viewport itemSize="200" class="viewport">
+                <div class="row">
+                <div class="col-md-12" *cdkVirtualFor="let pageData of homePageDetails?.data?.children">
+                    <app-basic-card [config]="pageData?.data" (clickEvent)="openCommentsPage($event)"></app-basic-card>
+                </div>
+            </div>
+            </cdk-virtual-scroll-viewport>
+            <router-outlet></router-outlet>
