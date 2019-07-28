@@ -1,11 +1,13 @@
-        <div class="row">
-        <div class="col-12 d-flex justiy-content-center" *ngIf="homePageDetails?.length === 0">
-            <div class="sorry-screen">
-                <p>Sorry! Something went wrong. Please try again.</p>
-            </div>
-            </div>
-            </div>
+
             <cdk-virtual-scroll-viewport itemSize="200" class="viewport">
+                    <div class="row" *ngIf="redditService.errorMessage">
+                            <div class="col-12 d-flex mt-5 justify-content-center" >
+                                <div class="sorry-screen d-flex align-items-center">
+                                    <i class="fa fa-frown-o"></i>
+                                    <p class="m-0 ml-2">{{redditService.errorMessage}}</p>
+                                </div>
+                                </div>
+                                </div>
                 <div class="row">
                 <div class="col-md-12" *cdkVirtualFor="let pageData of homePageDetails?.data?.children">
                     <app-basic-card [config]="pageData?.data" (clickEvent)="openCommentsPage($event)"></app-basic-card>

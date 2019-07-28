@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12">
-        <div class="card my-4 pb-3">
+        <div class="card my-4 pb-3 bx-sh">
             <app-basic-card [config]="commentsData[0]?.data?.children[0]?.data" (clickEvent)="openCommentsPage($event)"></app-basic-card>            
              <div class="rowm-0">
                  <div class="col-12">
@@ -10,30 +10,7 @@
                      </div>
                  </div>
              </div>
-            <!-- <basic-card></basic-card> -->
-            <ul class="tree">
-                <ng-container *ngFor="let commnet of commentsData[1]?.data?.children; 
-                let commentIndex = index">
-                <li *ngIf="showReplies >= commentIndex">
-                <div class="d-flex pl-3">
-                    <div class="row">
-                        <div class="col-12 author-info mb-1">
-                                <span>{{commnet?.data?.author}}</span>
-                                <span class="pl-2">{{redditService?.nFormatter(commnet?.data?.score)}} Points</span>
-                        </div>
-                        <div class="col-12">
-                                <span>{{commnet?.data?.body}}</span>
-                        </div>
-                    </div>
-                </div>
-              </li>
-            </ng-container>
-            <span class="ml-3 mt-3 more-rep" (click)="showMoreReplies()" 
-            *ngIf="commentsData[1]?.data?.children?.length>0 && (commentsData[1]?.data?.children?.length - showReplies)>0">{{commentsData[1]?.data?.children?.length - showReplies}} more replies</span>
-                <!-- <ul *ngIf="commnet?.data?.permalink" *ngFor="let nestedComment of ">
-                    <li></li>
-                </ul> -->
-            </ul>
+            <app-nested-comments [commentsData]="commentsData[1]?.data?.children"></app-nested-comments>
         </div>
     </div>
 </div>

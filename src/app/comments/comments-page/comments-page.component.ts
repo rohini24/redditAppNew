@@ -9,15 +9,12 @@ import { RedditService } from '../../reddit.service';
 export class CommentsPageComponent implements OnInit {
   
   commentsData=[];
-  showReplies = 4;
   constructor(public redditService: RedditService) { }
 
   ngOnInit() {
-    this.redditService.getCommentPage(this.redditService.commenetLink).subscribe(result=>{
+    this.redditService.getCommentPage(this.redditService.commenetLink + '/.json').subscribe(result=>{
       this.commentsData = result;
     });
   }
-  showMoreReplies(){
-    this.showReplies *=4;
-  }
+  
 }

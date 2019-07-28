@@ -1,5 +1,5 @@
 <mat-card>
-        <mat-card-title>{{config?.title}}</mat-card-title>
+        <mat-card-title (click)="openComment(config?.permalink)">{{config?.title}}</mat-card-title>
         <mat-card-content class="content">{{config?.selftext}}</mat-card-content>
         <div class="commnets d-flex justify-content-between align-items-center">
             <div class="posted-by ft-13">

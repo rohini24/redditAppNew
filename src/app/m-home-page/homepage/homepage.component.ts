@@ -17,7 +17,10 @@ export class HomepageComponent implements OnInit {
   getHomePageData() {
     this.redditService.getRedditPage().subscribe((result) => {
       this.homePageDetails = result
-    });
+    },(error)=>{
+      this.redditService.errorMessage = 'Sorry! somethig went wrong. Please try again'
+    }
+  );
   }
 
   openCommentsPage(event){

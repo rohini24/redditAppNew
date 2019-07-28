@@ -15,6 +15,7 @@ mat-card {
   }
   mat-card-title{
       color:#0b4e82;
+      cursor: pointer;
   }
   .ft-13{
       font-size: 13px;

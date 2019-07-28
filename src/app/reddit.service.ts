@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RedditService {
   commenetLink:string;
+  errorMessage: string;
   constructor(private http: HttpClient) { }
 
   getRedditPage():any{
@@ -13,7 +14,7 @@ export class RedditService {
   }
 
   getCommentPage(url):any{
-    return this.http.get('https://www.reddit.com' + url + '/.json')
+    return this.http.get('https://www.reddit.com' + url)
   }
   
   nFormatter(num) {

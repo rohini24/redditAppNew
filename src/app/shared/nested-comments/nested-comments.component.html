@@ -1,0 +1,36 @@
+<ul class="tree">
+    <ng-container *ngFor="let commnet of commentsData; 
+    let commentIndex = index">
+    <li *ngIf="showReplies >= commentIndex">
+    <div class="d-flex pl-3">
+        <div class="row">
+            <div class="col-12 author-info mb-1">
+                    <span>{{commnet?.data?.author}}</span>
+                    <span class="pl-2">{{redditService?.nFormatter(commnet?.data?.score)}} Points</span>
+            </div>
+            <div class="col-12">
+                    <span>{{commnet?.data?.body}}</span>                    
+            </div>
+        </div>
+    </div>
+  </li>
+  <!-- <li>
+    <ng-container *ngIf="commnet?.data?.permalink && showReplies >= commentIndex">
+        <li *ngFor="let nestedComment of getComments(commnet?.data?.permalink)[1]?.data?.children">
+            <div class="d-flex pl-3">
+                <div class="row">
+                    <div class="col-12 author-info mb-1">
+                            <span>{{nestedComment?.data?.author}}</span>
+                            <span class="pl-2">{{redditService?.nFormatter(nestedComment?.data?.score)}} Points</span>
+                    </div>
+                    <div class="col-12">
+                            <span>{{nestedComment?.data?.body}}</span>
+                    </div>
+                </div>
+            </div>
+        </li>    </ng-container>
+  </li> -->
+</ng-container>
+<span class="ml-3 mt-3 more-rep" (click)="showMoreReplies()" 
+*ngIf="commentsData?.length>0 && (commentsData?.length - showReplies)>0">{{commentsData?.length - showReplies}} more replies</span>
+</ul>
