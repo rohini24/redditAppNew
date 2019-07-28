@@ -16,5 +16,9 @@ export class CommentsPageComponent implements OnInit {
       this.commentsData = result;
     });
   }
-  
+  openCommentsPage(event){
+    if(event && event.key){
+      console.log('no action')
+    }
+  }
 }

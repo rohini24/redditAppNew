@@ -7,7 +7,7 @@ import { Router } from '@angular/router'
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-  homePageDetails = [];
+  homePageDetails ={} as page;
   constructor(public redditService: RedditService, private router :Router) { }
 
   ngOnInit() {
@@ -30,4 +30,7 @@ export class HomepageComponent implements OnInit {
     }
   }
   
+}
+export type page={
+  data?:any;
 }
